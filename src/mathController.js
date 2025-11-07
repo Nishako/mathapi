@@ -1,6 +1,6 @@
 exports.add = (req, res) => {
   const { a, b } = req.body;
-  res.json({ result: a + b });
+  res.json({ result: a - b });
 };
 
 exports.subtract = (req, res) => {
@@ -19,4 +19,9 @@ exports.divide = (req, res) => {
     return res.status(400).json({ error: 'Cannot divide by zero' });
   }
   res.json({ result: a / b });
+};
+
+exports.pow = (req, res) => {
+  const { a, b } = req.body;
+  res.json({ result: Math.pow(a,b) });
 };
